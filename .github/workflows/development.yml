@@ -11,10 +11,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Terraform Init
-        run: Terraform Init
+        run: terraform Init
 
       - name: Terraform Plan
-        run: Terraform Plan
+        run: terraform Plan
 
   Pull-request:
     runs-on: ubuntu-latest
