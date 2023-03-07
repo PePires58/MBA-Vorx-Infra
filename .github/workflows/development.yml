@@ -5,6 +5,7 @@ on:
 
 jobs:
   validate-and-plan-terraform:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +31,6 @@ jobs:
   Pull-request:
     runs-on: ubuntu-latest
     needs: [validate-and-plan-terraform]
-    permissions: write
     steps:
       - uses: actions/checkout@v2
       
