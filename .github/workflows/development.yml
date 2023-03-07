@@ -1,0 +1,29 @@
+name: Development workflow - Lambda Function
+on:
+  push:
+    branches: [development]
+
+jobs:
+  Development-lambda-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Terraform Init
+        run: Terraform Init
+
+      - name: Terraform Plan
+        run: Terraform Plan
+
+  Pull-request:
+    runs-on: ubuntu-latest
+    needs: [Development-lambda-workflow]
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Create pull request
+        run: gh pr create -B main -H development --title 'Merge development into main' --body 'Created by Github action' || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
