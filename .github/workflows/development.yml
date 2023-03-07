@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Create pull request
-        run: gh pr create -B main -H development --title 'Merge development into main' --body 'Created by Github action' || true
+        run: gh pr create -B main -H development --title 'Terraform Plan Verification Required' --body 'Please verify the Terraform Plan STEP in order to confirm the commit' || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
