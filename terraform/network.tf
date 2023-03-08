@@ -11,8 +11,10 @@ module "vpc" {
   enable_nat_gateway = false
   enable_vpn_gateway = true
 
+  default_route_table_propagating_vgws = []
+
   tags = {
-    Name        = "Vorx-vpc"
+    Name        = "Vorx-vpc-PROD"
     Environment = "prod"
   }
 }
