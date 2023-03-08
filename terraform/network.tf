@@ -101,6 +101,6 @@ resource "aws_route_table_association" "association-vorx-private-rt-1a" {
 }
 
 resource "aws_route_table_association" "association-vorx-private-rt-1b" {
-  subnet_id      = aws_subnet.vorx-subnet-private-1a.id
+  subnet_id      = aws_subnet.vorx-subnet-private-1b.id
   route_table_id = aws_route_table.vorx-private-rt-1b.id
 }
