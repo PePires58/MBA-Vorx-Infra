@@ -7,9 +7,7 @@ The infrastructure is divided into two files:
 - - Subnets
 - - Security Groups
 - - Route Tables
-- - Internet Gateway 
-- 2 - backend
-- - EC2
+- - Internet Gateway
 
 All the project is build with Terraform and GitHub Actions for CI/CD.
 
